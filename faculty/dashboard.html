@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard - MIT College Management System</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="faculty.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-brand">
+                    <div class="sidebar-brand-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div>
+                        <div class="sidebar-brand-title">MIT Faculty</div>
+                        <span class="sidebar-brand-subtitle">Academic Instructor Portal</span>
+                    </div>
+                </div>
+
+                <div id="user-info" class="user-info-card">
+                    <div class="user-avatar-badge" id="faculty-avatar-initials">PV</div>
+                    <div class="user-info-text">
+                        <div class="user-name-display" id="faculty-name-display">Prof. Akash Verma</div>
+                        <div class="user-role-badge">Faculty Member</div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section-label">Instructor Menu</div>
+                <ul>
+                    <li class="active">
+                        <a href="#" data-section="dashboard">
+                            <i class="fas fa-th-large"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-section="my-courses">
+                            <i class="fas fa-book-reader"></i>
+                            <span>My Courses</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-section="schedule">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Class Schedule</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-section="attendance">
+                            <i class="fas fa-clipboard-check"></i>
+                            <span>Attendance Portal</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="logout-btn" class="btn-logout" title="Sign out of Faculty Portal">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-title-box">
+                    <h1 id="faculty-header-title">Faculty Dashboard</h1>
+                    <div class="header-breadcrumb">Instructor Portal / <span id="faculty-breadcrumb">Overview</span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <div class="date-display" id="current-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>Loading date...</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <!-- 1. Dashboard Overview Section -->
+                <div id="dashboard" class="dashboard-section active">
+                    <div class="faculty-welcome">
+                        <h2>Welcome back, <span id="faculty-welcome-name">Professor</span>!</h2>
+                        <p>Department of Computer Science & Engineering | Faculty ID: <strong
+                                id="faculty-badge-id">FAC-104</strong></p>
+                    </div>
+
+                    <div class="quick-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper"
+                                style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div>
+                                <h3>Courses Assigned</h3>
+                                <p class="stat-number">4</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper"
+                                style="background: linear-gradient(135deg, #10b981, #047857);">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div>
+                                <h3>Total Students</h3>
+                                <p class="stat-number">128</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper"
+                                style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div>
+                                <h3>Classes Today</h3>
+                                <p class="stat-number">3</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper"
+                                style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div>
+                                <h3>Pending Grading</h3>
+                                <p class="stat-number">18</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faculty-grid">
+                        <div class="card">
+                            <h3><i class="fas fa-clock"></i> Today's Lecture Schedule</h3>
+                            <div class="schedule-list">
+                                <div class="schedule-item">
+                                    <div class="schedule-time">09:00 - 10:30</div>
+                                    <div class="schedule-details">
+                                        <h4>CS101 - Introduction to Programming</h4>
+                                        <p>Hall 201 • Batch A (45 Students)</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-item">
+                                    <div class="schedule-time">11:00 - 12:30</div>
+                                    <div class="schedule-details">
+                                        <h4>CS301 - Data Structures & Algorithms</h4>
+                                        <p>Lab 3 • Batch B (38 Students)</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-item">
+                                    <div class="schedule-time">14:00 - 15:30</div>
+                                    <div class="schedule-details">
+                                        <h4>CS402 - Advanced Machine Learning</h4>
+                                        <p>Seminar Room 305 • Batch C (45 Students)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3><i class="fas fa-bullhorn"></i> Department Notices</h3>
+                            <div class="notices-list">
+                                <div class="notice-item urgent">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <div>
+                                        <p>Submit mid-term grades before October 25</p>
+                                        <small>Department Dean office deadline</small>
+                                    </div>
+                                </div>
+                                <div class="notice-item">
+                                    <i class="fas fa-users-cog"></i>
+                                    <div>
+                                        <p>Departmental Curriculum Meeting</p>
+                                        <small>October 15, 10:00 AM • Conference Room 1</small>
+                                    </div>
+                                </div>
+                                <div class="notice-item">
+                                    <i class="fas fa-laptop-code"></i>
+                                    <div>
+                                        <p>Research Grant Proposals Review</p>
+                                        <small>Submit drafts to Dean by month end</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. My Courses Section -->
+                <div id="my-courses" class="dashboard-section">
+                    <!-- Loaded dynamically via faculty.js -->
+                </div>
+
+                <!-- 3. Schedule Section -->
+                <div id="schedule" class="dashboard-section">
+                    <!-- Loaded dynamically via faculty.js -->
+                </div>
+
+                <!-- 4. Attendance Section -->
+                <div id="attendance" class="dashboard-section">
+                    <!-- Loaded dynamically via faculty.js -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="../auth.js"></script>
+    <script src="faculty.js"></script>
+</body>
+
+</html>
